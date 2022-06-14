@@ -10,14 +10,14 @@ upstream:
   git:
     repo: https://github.com/rasadus03/raniamoh-blueprint.git
     directory: istions
-    ref: main
+    ref: istions/v3
 upstreamLock:
   type: git
   git:
     repo: https://github.com/rasadus03/raniamoh-blueprint.git
     directory: istions
-    ref: main
-    commit: e8bf7bddd70456efedf19d75615f217f856207d5
+    ref: istions/v3
+    commit: f8dc5a11f051f7c3f159f668f94ef3e1ac7030ff
 info:
   description: A Google Cloud Storage bucket
 pipeline:
