@@ -9,13 +9,13 @@ upstream:
   type: git
   git:
     repo: https://github.com/rasadus03/raniamoh-blueprint.git
-    directory: gke-clone
+    directory: gke-clone-lat
     ref: main
 upstreamLock:
   type: git
   git:
     repo: https://github.com/rasadus03/raniamoh-blueprint.git
-    directory: gke-clone
+    directory: gke-clone-lat
     ref: main
     commit: 8d1cdb16adc98a19a8a9600dc627719b47d58b45
 info:
