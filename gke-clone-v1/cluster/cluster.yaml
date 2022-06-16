@@ -35,8 +35,8 @@ spec:
     gcePersistentDiskCsiDriverConfig:
       enabled: true
   # Enable Groups for GKE, to allow role binding to Google Groups.
-  authenticatorGroupsConfig:
-    securityGroup: gke-security-groups@example.com # kpt-set: ${security-group}
+  #authenticatorGroupsConfig:
+  #  securityGroup: gke-security-groups@example.com # kpt-set: ${security-group}
   # Enable Binary Authorization by default, to allow configuration of constraint
   # policies and container image attestation.
   # https://cloud.google.com/binary-authorization/docs/overview
