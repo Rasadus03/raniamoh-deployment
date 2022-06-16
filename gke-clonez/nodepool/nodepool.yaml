@@ -17,7 +17,7 @@ metadata: # kpt-merge: config-control/example-us-east4-primary
   name: porche-kcc-demo1-primary # kpt-set: ${cluster-name}-${nodepool-name}
   namespace: config-control
   annotations:
-    cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn
+    cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn-live
     cnrm.cloud.google.com/project-id: raniamoh-playground # kpt-set: ${project-id}
 spec:
   autoscaling:

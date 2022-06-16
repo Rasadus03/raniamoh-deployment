@@ -26,3 +26,7 @@ pipeline:
   mutators:
     - image: gcr.io/kpt-fn/apply-setters:v0.1
       configPath: setters.yaml
+inventory:
+  namespace: default
+  name: inventory-67957365
+  inventoryID: a8af8a59bc455dfa61b1737caf9940f03412ae51-1655403071617331000
