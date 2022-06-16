@@ -14,7 +14,7 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerNodePool
 metadata: # kpt-merge: config-control/example-us-east4-primary
-  name: porche-kcc-demo1-primary # kpt-set: ${cluster-name}-${nodepool-name}
+  name: example-us-east4-primary # kpt-set: ${cluster-name}-${nodepool-name}
   namespace: config-control
   annotations:
     cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn-live
@@ -26,7 +26,7 @@ spec:
     # minNodeCount is per-zone, for regional clusters
     minNodeCount: 1
   clusterRef:
-    name: porche-kcc-demo1 # kpt-set: ${cluster-name}
+    name: example-us-east4 # kpt-set: ${cluster-name}
   # At least one node is required for cluster system components.
   # initialNodeCount is per-zone, for regional clusters
   initialNodeCount: 1
@@ -53,4 +53,4 @@ spec:
     oauthScopes:
     - https://www.googleapis.com/auth/cloud-platform
     serviceAccountRef:
-      name: gke-porche-kcc-demo1-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
+      name: gke-example-us-east4-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
