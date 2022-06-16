@@ -1,10 +1,23 @@
 apiVersion: kpt.dev/v1
 kind: Kptfile
 metadata:
-  name: gke-cluster
+  name: gke-clone-lat/cluster
   annotations:
     blueprints.cloud.google.com/title: GKE Cluster blueprint
     config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: https://github.com/rasadus03/raniamoh-deployment.git
+    directory: gke-clone-lat/cluster
+    ref: main
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/rasadus03/raniamoh-deployment.git
+    directory: gke-clone-lat/cluster
+    ref: main
+    commit: eaf930432df47af5979b581a80c2d413de6dbfd2
 info:
   description: A GKE cluster with public masters and private nodes
 pipeline:

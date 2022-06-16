@@ -14,7 +14,7 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerCluster
 metadata: # kpt-merge: config-control/example-us-east4
-  name: porche-kcc-demo1 # kpt-set: ${cluster-name}
+  name: example-us-west4 # kpt-set: ${cluster-name}
   namespace: config-control
   annotations:
     cnrm.cloud.google.com/blueprint: cnrm/gke:gke-cluster/v0.4.1,kpt-pkg-fn-live
@@ -60,7 +60,7 @@ spec:
     - cidrBlock: 0.0.0.0/0
       displayName: Whole Internet
   networkRef:
-    external: projects/raniamoh-playground/global/networks/network1 # kpt-set: ${network-ref}
+    external: projects/network-project-id/global/networks/default # kpt-set: ${network-ref}
   privateClusterConfig:
     # Allow public access to the GKE control plane by default.
     # This default is a deliberate compromise for ease of use over security.
@@ -94,7 +94,7 @@ spec:
   # Use a dedicated subnet by default, to increase isolation and allow for
   # cluster-specific firewalls.
   subnetworkRef:
-    external: projects/raniamoh-playground/regions/region/subnetworks/network1 # kpt-set: ${subnet-ref}
+    external: projects/network-project-id/regions/region/subnetworks/default # kpt-set: ${subnet-ref}
   # Enable Vertical Pod Autoscaling by default.
   # https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
   verticalPodAutoscaling:
