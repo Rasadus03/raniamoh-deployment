@@ -15,26 +15,26 @@
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata: # kpt-merge: config-control/gke-example-us-east4-primary
-  name: gke-porche-demo-east-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
+  name: gke-porche-demo-east-raniamoh-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
   namespace: config-control
   annotations:
     cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn
     cnrm.cloud.google.com/project-id: raniamoh-playground # kpt-set: ${project-id}
 spec:
-  displayName: gke-porche-demo-east-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
+  displayName: gke-porche-demo-east-raniamoh-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
 ---
 # Allow fluentd to send logs to StackDriver
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata: # kpt-merge: config-control/logwriter-gke-example-us-east4-primary
-  name: logwriter-gke-porche-demo-east-primary # kpt-set: logwriter-gke-${cluster-name}-${nodepool-name}
+  name: logwriter-gke-porche-demo-east-raniamoh-primary # kpt-set: logwriter-gke-${cluster-name}-${nodepool-name}
   namespace: config-control
   annotations:
     cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn
 spec:
   memberFrom:
     serviceAccountRef:
-      name: gke-porche-demo-east-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
+      name: gke-porche-demo-east-raniamoh-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
       namespace: config-control
   resourceRef:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
@@ -46,14 +46,14 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata: # kpt-merge: config-control/metricwriter-gke-example-us-east4-primary
-  name: metricwriter-gke-porche-demo-east-primary # kpt-set: metricwriter-gke-${cluster-name}-${nodepool-name}
+  name: metricwriter-gke-porche-demo-east-raniamoh-primary # kpt-set: metricwriter-gke-${cluster-name}-${nodepool-name}
   namespace: config-control
   annotations:
     cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn
 spec:
   memberFrom:
     serviceAccountRef:
-      name: gke-porche-demo-east-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
+      name: gke-porche-demo-east-raniamoh-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
       namespace: config-control
   resourceRef:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
@@ -65,14 +65,14 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata: # kpt-merge: config-control/artifactreader-gke-example-us-east4-primary
-  name: artifactreader-gke-porche-demo-east-primary # kpt-set: artifactreader-gke-${cluster-name}-${nodepool-name}
+  name: artifactreader-gke-porche-demo-east-raniamoh-primary # kpt-set: artifactreader-gke-${cluster-name}-${nodepool-name}
   namespace: config-control
   annotations:
     cnrm.cloud.google.com/blueprint: cnrm/gke:gke-nodepool/v0.4.1,kpt-pkg-fn
 spec:
   memberFrom:
     serviceAccountRef:
-      name: gke-porche-demo-east-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
+      name: gke-porche-demo-east-raniamoh-primary # kpt-set: gke-${cluster-name}-${nodepool-name}
       namespace: config-control
   resourceRef:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
