@@ -5,4 +5,4 @@ metadata: # kpt-merge: /kptfile.kpt.dev
   annotations:
     config.kubernetes.io/local-config: "true"
 data:
-  name: gke-clone
+  name: gke-clone/cluster
