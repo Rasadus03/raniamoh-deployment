@@ -8,17 +8,17 @@ metadata:
 upstream:
   type: git
   git:
-    repo: https://github.com/Rasadus03/raniamoh-blueprint
+    repo: https://github.com/Rasadus03/raniamoh-deployment
     directory: /gke-clone
     ref: v1
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
-    repo: https://github.com/Rasadus03/raniamoh-blueprint
+    repo: https://github.com/Rasadus03/raniamoh-deployment
     directory: /gke-clone
     ref: gke-clone/v1
-    commit: 03e261f3e491003c75e44648c0bad1a23d9e6e6c
+    commit: 418a6aa49e6b2552f406b98c7fa697d3a5b861a5
 info:
   description: |
     A GKE cluster with a primary node pool. An existing subnet needs to be provided where the cluster should be created.
