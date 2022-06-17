@@ -1,0 +1,28 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: gke-clone
+  annotations:
+    blueprints.cloud.google.com/title: GKE blueprint
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: https://github.com/Rasadus03/raniamoh-blueprint
+    directory: /gke-clone
+    ref: v1
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/Rasadus03/raniamoh-blueprint
+    directory: /gke-clone
+    ref: gke-clone/v1
+    commit: 03e261f3e491003c75e44648c0bad1a23d9e6e6c
+info:
+  description: |
+    A GKE cluster with a primary node pool. An existing subnet needs to be provided where the cluster should be created.
+pipeline:
+  mutators:
+  - image: gcr.io/kpt-fn/apply-setters:v0.1
+    configPath: setters.yaml
